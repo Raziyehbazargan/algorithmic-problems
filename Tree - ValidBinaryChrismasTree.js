@@ -5,7 +5,6 @@ function isValidTree(tree){
    } 
    var left = tree.left;
    var right = tree.right;
-   
    function process(tree) {
        if(!tree){return;}
        if (!tree.left&&!tree.right) {
@@ -25,5 +24,5 @@ function isValidTree(tree){
    if((process(left)==false)||(process(right)==false)) {
      return false;
    }
-    return true;
+   return true;
 }
