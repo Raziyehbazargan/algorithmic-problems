@@ -1,0 +1,40 @@
+/**
+ * @param {string[]} tokens
+ * @return {number}
+ */
+// time and space complexity = O(n)
+var evalRPN = function(tokens) {
+    var stack = [];
+    var returnValue = 0;
+    var operators = "+-*/";
+    for (var i= 0; i<tokens.length; i++) {
+        var el = parseInt(tokens[i]);
+        if (Number.isInteger(el)===true) {
+            stack.push(el)
+        } else {
+            if (tokens[i]=="+"||tokens[i]=="-"||tokens[i]=="*"||tokens[i]=="/") {
+                var num1 = stack.pop();
+                var num2 = stack.pop();
+                var index = operators.indexOf(tokens[i]);
+                var res;
+                switch (tokens[i]) {
+                    case "+":
+                        res = num1+num2;
+                    break;
+                    case "-":
+                        res = num2-num1;
+                        break;
+                    case "*":
+                        res = num1*num2;
+                        break;
+                    case "/":
+                        res = num2/num1;
+                        break;
+                }
+                stack.push(res);
+            }
+        }
+    }
+    returnValue = parseInt(stack[0]);
+    return returnValue;
+};
