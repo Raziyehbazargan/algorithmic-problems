@@ -1,0 +1,19 @@
+var rotate = function(nums, k) {
+    if (k>nums.length) {
+        k = k%nums.length;
+    }
+    
+    var result = [];
+    
+    for (var i = 0; i<k; i++) {
+        result[i] = nums[nums.length-k+i];
+    }
+    var j = 0;
+    for (var f=k; f<nums.length; f++) {
+        result[f] = nums[j];
+        j++;
+    }
+    nums = result.slice();
+};
+
+//spece - O(n), time  - O(n)
