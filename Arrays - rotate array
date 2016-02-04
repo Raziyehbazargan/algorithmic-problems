@@ -16,4 +16,18 @@ var rotate = function(nums, k) {
     nums = result.slice();
 };
 
-//spece - O(n), time  - O(n)
+//space - O(n), time  - O(n)
+
+//2-nd solution; time = O(n*k)
+var rotate = function(nums, k) {
+    if (nums === null||k < 0) {
+        throw new Error();
+    }
+    for (var i = 0; i<k; i++) {
+        for (var j = nums.length-1; j>0; j--) {
+            var cur = nums[j];
+            nums[j] = nums[j-1];
+            nums[j-1] = cur;
+        }
+    }
+};
