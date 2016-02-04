@@ -1,0 +1,38 @@
+function isIsomorphic(s, t) {
+    if(s==null || t==null)
+        return false;
+ 
+    if(s.length != t.length)
+        return false;
+ 
+    if(s.length==0 && t.length==0)
+        return true;
+
+  var map = {};
+  for(var i=0; i<s.length; i++){
+        var c1 = s.charAt(i);
+        var c2 = t.charAt(i);
+ 
+        var c = getKey(map, c2);
+        if(c != null && c!=c1){
+            return false;
+        }else if(map[c1]!=null){
+            if(c2 != map[c1])
+                return false;
+        }else{
+            map[c1]=c2;
+        }
+    }
+ 
+    return true;
+}
+ 
+// a method for getting key of a target value
+function getKey(map, target){
+    for (var i in map)     {
+        if (map[i] == target) {
+            return i;
+        }
+    }
+    return null;
+}
