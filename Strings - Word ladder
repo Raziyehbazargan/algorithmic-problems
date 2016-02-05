@@ -1,0 +1,58 @@
+/**
+ * @param {string} beginWord
+ * @param {string} endWord
+ * @param {Set} wordList
+ *   Note: wordList is a Set object, see:
+ *   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
+ * @return {number}
+ */
+var ladderLength = function(begin, end, list) {
+    if (list.length===0) {
+        return 0;
+    }
+    list.push(end);
+    var wordQueue = [];
+    var distanceQueue = [];
+    wordQueue.push(begin);
+    distanceQueue.push(1);
+    
+    var result = 99999999999999999;
+    
+    while (wordQueue.length!==0) {
+        var curWord = wordQueue.pop();
+        var curDist = distanceQueue.pop();
+        
+        if (curWord==end) {
+            result = Math.min(result, curDist);
+        }
+        
+        for (var i =0; i<curWord.length; i++) {
+            var curChar = curWord.split('');
+            
+            for (var j = "a"; j<"z"; j = nextChar(j)) {
+                curChar[i] = j;
+                var newWord = curChar.join('');
+                
+                if (list.indexOf(newWord)===-1) {
+                    wordQueue.push(newWord);
+                    distanceQueue.push(curDist+1);
+                    var index = list.indexOf(newWord);
+                    if (index>-1) {
+                        list.splice (index,1);
+                    }
+                }
+            }
+        }
+    }
+    
+    if (result<99999999999999999) {
+        return result
+    } else {
+        return null;
+    }
+    
+};
+
+function nextChar(c) {
+    return String.fromCharCode(c.charCodeAt(0) + 1);
+}

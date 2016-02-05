@@ -1,0 +1,23 @@
+/**
+ * @param {string} beginWord
+ * @param {string} endWord
+ * @param {Set} wordList
+ *   Note: wordList is a Set object, see:
+ *   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
+ * @return {number}
+ */
+function bubbleSort (array) {
+  var swapped;
+  do {
+    swapped=false;
+    for (var i=0; i<array.length-1; i++) {
+      if (array[i+1]<array[i]) {
+          var temp = array[i];
+          array[i] = array[i+1];
+          array[i+1] = temp;
+          swapped=true;
+      }
+    }
+  } while (swapped==true)
+  return array;
+}
