@@ -2,11 +2,11 @@
 //time complexity O(n^2) - the worst situation
 function inserionSort (array) {
    for (var i = 1; i<array.length; i++) {
-    var active = array[i];
-    for ( j =i-1; j>=0&&array[j]>active; j--) {
-        array[j+1] = array[j]; 
-    }
-    array[j+1] = active;
+	var active = array[i];
+	for ( j =i-1; j>=0&&array[j]>active; j--) {
+		array[j+1] = array[j]; 
+	}
+	array[j+1] = active;
   }
   return array;
 } 
