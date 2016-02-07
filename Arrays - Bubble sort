@@ -1,13 +1,16 @@
-
 //time complexity O(n^2) - the worst situation
-function inserionSort (array) {
-   for (var i = 1; i<array.length; i++) {
-    var active = array[i];
-    for ( j =i-1; j>=0&&array[j]>active; j--) {
-        array[j+1] = array[j]; 
+function bubbleSort (array) {
+  var swapped;
+  do {
+    swapped=false;
+    for (var i=0; i<array.length-1; i++) {
+      if (array[i+1]<array[i]) {
+          var temp = array[i];
+          array[i] = array[i+1];
+          array[i+1] = temp;
+          swapped=true;
+      }
     }
-    array[j+1] = active;
-  }
+  } while (swapped==true)
   return array;
 } 
-
