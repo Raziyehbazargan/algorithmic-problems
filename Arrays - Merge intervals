@@ -1,7 +1,5 @@
 var merge = function(arr) {
-   if (arr.length===0) {
-       return arr;
-   }
+ 
    if (arr.length<2) {
        return arr;
    }
