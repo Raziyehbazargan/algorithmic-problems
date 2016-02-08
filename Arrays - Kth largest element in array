@@ -1,0 +1,32 @@
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number}
+ */
+var findKthLargest = function(arr, k) {
+   function merge(arr) {
+    if (arr.length<2) {
+        return arr;
+    }
+    var mid = Math.floor(arr.length/2);
+    var left = merge(arr.slice(0,mid));
+    var right = merge(arr.slice(mid));
+    
+    return mergeSort(left,right);
+   }
+   
+   function mergeSort(left,right) {
+       var result = [];
+       while(left.length>0&&right.length>0) {
+           if (left[0]<right[0]) {
+               result.push(left.shift());
+           } else {
+               result.push(right.shift());
+           }
+       }
+       return result.concat(left.length? left: right);
+   }
+   
+   var newArr = merge(arr);
+   return newArr[newArr.length-k];
+};
