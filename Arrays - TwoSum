@@ -1,0 +1,20 @@
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(arr, target) {
+    var result = [];
+    var map = {};
+    
+    for (var i =0; i<arr.length; i++) {
+        var value = target - arr[i];
+        if (value in map) {
+            result.push(map[value] +1);
+            result.push(i+1);
+        } else {
+            map[arr[i]] = i;
+        }
+    }
+    return result;
+};

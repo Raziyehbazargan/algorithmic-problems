@@ -1,0 +1,17 @@
+var insert = function(arr, int) {
+    var result = [];
+    for (var i =0; i<arr.length; i++) {
+        var interval = arr[i];
+        if (interval.end<int.start) {
+            result.push(interval)
+        } else if (interval.start>int.end) {
+            result.push(int);
+            int = interval;
+        } else if(interval.end>=int.start||interval.start<=int.end) {
+            int = new Interval(Math.min(interval.start, int.start), Math.max(int.end, interval.end))
+        }
+    }
+    result.push(int);
+    return result;
+};
+
