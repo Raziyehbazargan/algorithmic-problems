@@ -1,0 +1,130 @@
+var getIntersectionNode = function(headA, headB) {
+   var map = {};
+   var cur1 = headA;
+   while (cur1!==null) {
+       
+       map[cur1] = cur1;
+       cur1 = cur1.next
+   }
+   var cur2 = headB;
+   while (cur2!==null) {
+       if (cur2 in map) {
+           return map[cur2];
+       }
+       cur2 = cur2.next;
+   }
+   return null;
+};
+
+var getIntersectionNode = function(headA, headB) {
+     if (headA===null||headB===null) {
+       return null;
+   }
+    var count = 0;
+    var cur1 = headA;
+    
+    while (cur1) {
+        count++;
+        cur1=cur1.next;
+    
+    }
+    cur = headA;
+    for (var i=0; i<count;i++) {
+         var cur2 = headB;
+         while (cur2) {
+             if(cur===cur2) {
+                 return cur;
+             }
+             cur2 = cur2.next;
+         }
+         cur = cur.next;
+    }
+    return null;
+};
+
+
+var getIntersectionNode = function(headA, headB) {
+     if (headA===null||headB===null) {
+       return null;
+   }
+    var count = 0;
+    var cur1 = headA;
+    
+    while (cur1) {
+        count++;
+        cur1=cur1.next;
+    
+    }
+    cur = headA;
+    for (var i=1; i<count;i++) {
+         var cur2 = headB;
+         while (cur2) {
+             if(cur.next===cur2) {
+                 return cur.next;
+             }
+             cur2 = cur2.next;
+         }
+         cur = cur.next;
+    }
+    return null;
+};
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+
+/**
+ * @param {ListNode} headA
+ * @param {ListNode} headB
+ * @return {ListNode}
+ */
+var getIntersectionNode = function(headA, headB) {
+     if (headA===null||headB===null) {
+       return null;
+   }
+    var count1 = 1;
+    var count2 = 1;
+    var cur1 = headA;
+    var cur2 = headB;
+    
+    while (cur1.next) {
+        count1++;
+        cur1=cur1.next;
+    }
+    while (cur2.next) {
+        count2++;
+        cur2=cur2.next;
+    }
+    
+    var A = headA; var B = headB;
+    if (count1>count2) {
+        return intersection(A, B, count1, count2);
+    }
+    if (count1<count2) {
+        return intersection(B, A, count2, count1);
+    }
+    if (count1===count2) {
+        return intersection(A, B, count1, count2);
+    }
+    
+    function intersection (A, B, count1, count2){
+        if (count1!==count2) {
+            var diff = count1-count2;
+            for (var i=0; i<diff; i++) {
+                A = A.next;
+            }
+        }
+         while (B.next) {
+            if (A.next===B.next)  {
+                return A.next;
+            }
+            B = B.next;
+            A = A.next;
+        }
+        return null;
+    }
+};
