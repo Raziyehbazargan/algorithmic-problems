@@ -54,3 +54,29 @@ function isZero (arr)  {
 	}
 	return -1;
 }
+
+//////////////////////another solution////////////////////////////////////////////////////////
+function maxSubarray (arr) {
+	var length = arr.length;
+	var max_end = 1;
+	var min_end = 1;
+	var max = 1;
+
+	for (var i =0; i<length; i++) {
+		if (arr[i]>0) {
+			max_end = max_end*arr[i];
+			min_end = Math.max(min_end*arr[i], 1);
+		} else if (arr[i]===0) {
+			max_end = 1;
+			min_end = 1;
+		} else {
+			var temp = max_end;
+			max_end = Math.max(min_end*arr[i], 1);
+			min_end = temp*arr[i];
+		}
+		if (max<max_end) {
+			max = max_end;
+		}
+	}
+	return max;
+}
