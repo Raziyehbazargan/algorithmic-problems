@@ -35,7 +35,6 @@ var detectCycle = function(head) {
     if (fast===head) {
         return slow;
     }
-    
     while (slow!==fast) {
         slow  = slow.next;
         fast = fast.next;
