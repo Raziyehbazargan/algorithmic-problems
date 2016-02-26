@@ -18,6 +18,7 @@ function countChar (str) {
     strPermutations (str, count, result, level)
 }
 
+
 function strPermutations(str, count, result, level) {
 	
 	for (var i =0; i<str.length; i++) {

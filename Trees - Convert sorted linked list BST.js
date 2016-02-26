@@ -34,7 +34,6 @@ var sortedListToBST = function(head) {
             return count;
         }
         
-        
         function BST(start, end) {
             if (start>end) {
                 return null;

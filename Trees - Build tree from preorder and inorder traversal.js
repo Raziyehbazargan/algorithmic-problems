@@ -20,7 +20,6 @@ function buildTree (pre, inorder) {
    }
     
     return buildTreeUtility(pre, inorder, map);
-
 }
 
 function buildTreeUtility(pre, inorder, map) {

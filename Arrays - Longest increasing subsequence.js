@@ -23,7 +23,7 @@ function lis (arr) {
 //3 cases:
 //1 - arr[i] is the smallest element between all end elements in the lists: create new list with this element 
 // maybe it is a start of new sequence
-//2 - arr[i] is the largest element between all end elements in the lists: clone the largest active list and extand 
+//2 - arr[i] is the largest element  in the lists: clone the largest active list and extand 
 // it by arr[i]
 // 3 - arr[i] is between end elements in the list : find the list with the larger end element which is smaller than 
 // arr[i]. Clone and extand this list . Discard all lists with the same length
@@ -44,7 +44,6 @@ function lis (arr) {
 	}
 	return length;
 }
-
 function replaceIndex(tails, l, r, key) {
 	while (r-l>1) {
 		var mid = Math.floor((l+r)/2)
