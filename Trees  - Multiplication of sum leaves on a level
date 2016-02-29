@@ -1,0 +1,33 @@
+
+function sumLeaves(tree) {
+	var q1= [];
+	var q2 = [];
+	var result = 1;
+	var sum = 0;
+	if (tree===null) {
+		return 0;
+	}
+	q1.push(tree);
+
+	while (q1.length!==0) {
+		var n = q1.shift();
+		if (n.left!==null) {
+			q2.push(n.left);
+		}
+		if (n.right!==null) {
+			q2.push(n.right);
+		}
+		if (n.left===null&&n.right===null) {
+			sum+=n.val;
+		}
+		if (q1.length===0) {
+			q1 = q2;
+			q2 = [];
+			if (sum!==0) {
+				result*=sum;
+				sum = 0;
+			};
+		};
+	};
+	return result;
+}

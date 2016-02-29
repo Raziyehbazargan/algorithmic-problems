@@ -4,21 +4,17 @@ function Tree (val) {
 }
 
 function buildTree (pre, inorder) {
-   if (pre.length===0||inorder.length===0) {
+    if (pre.length===0||inorder.length===0) {
       return null;
-   }
-   if (pre.length!==inorder.length) {
+    }
+    if (pre.length!==inorder.length) {
       return null;
-   }
-   var map = {};
-   for (var i =0; i<pre.length; i++) {
-     for (var j = 0; j<inorder.length; j++) {
-        if (pre[i]===inorder[j]) {
-            map[pre[i]]=j;
-        }
-     }
-   }
-    
+    }
+    var map = {};
+    for (var j = 0; j<inorder.length; j++) {
+        map[inorder[j]]=j;
+    }
+
     return buildTreeUtility(pre, inorder, map);
 }
 
