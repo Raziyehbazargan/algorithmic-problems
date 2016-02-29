@@ -16,11 +16,11 @@ var reverseList = function(head) {
     var cur = head;
     
     prev = cur;
-    var current = cur.next;
+    var next = cur.next;
     cur.next = null;
-    cur = current;
+    cur = next;
     while (cur!==null) {
-        var next = cur.next;
+        next = cur.next;
         cur.next = prev;
         prev = cur;
         cur = next;
