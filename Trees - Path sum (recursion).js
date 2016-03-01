@@ -33,7 +33,7 @@ root.left.left = new Tree(6);
 
 function pathSum (root, sum, result) {
 	if (root===null) {
-		return null;
+		return false;
 	}
 	if (root.right===null&&root.left===null) {
 		if (root.val===sum) {
