@@ -9,6 +9,14 @@
  * @param {TreeNode} root
  * @return {number[]}
  */
+function Tree (val) {
+  this.val = val;
+  this.left = this.right = null;
+}
+var root = new Tree(1);
+root.left = new Tree(2);
+root.right = new Tree(3);
+root.left.left = new Tree(4);
 
 var preorderTraversal = function(root) {
   var stack = [];
@@ -29,3 +37,12 @@ var preorderTraversal = function(root) {
   }
   return values;
 };
+
+
+function preorderTraversal (root) {
+  if (root!==null) {
+     console.log(root.val);
+     preorderTraversal(root.left);
+     preorderTraversal(root.right);
+  }
+}

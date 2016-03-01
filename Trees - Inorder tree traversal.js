@@ -29,3 +29,20 @@ var inorderTraversal = function(root) {
     }
     return values;
 };
+//recursive solution 
+
+function Tree (val) {
+  this.val = val;
+  this.left = this.right = null;
+}
+var root = new Tree(1);
+root.left = new Tree(2);
+root.right = new Tree(3);
+
+function inorderTraversal (root) {
+  if (root!==null) {
+    inorderTraversal(root.left);
+    console.log(root.val);
+    inorderTraversal(root.right);
+  }
+}

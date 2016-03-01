@@ -45,3 +45,13 @@ var postorderTraversal = function(root) {
     }
     return values;
 };
+
+//recursive solution
+
+function postorderTraversal (root) {
+    if (root!==null) {
+        postorderTraversal(root.left);
+        postorderTraversal(root.right);
+        console.log(root.val);
+    }
+}
