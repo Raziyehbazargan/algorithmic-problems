@@ -55,3 +55,30 @@ function postorderTraversal (root) {
         console.log(root.val);
     }
 }
+
+// solution using 2 stacks
+
+function postorderTraversal (root) {
+    if (root===null) {
+        return null;
+    }
+    var s1 = [];
+    var s2 = [];
+    s1.push(root);
+
+    while (s1.length!==0) {
+        var root = s1.pop();
+        s2.push(root);
+        if (root.left) {
+            s1.push(root.left)
+        }
+        if (root.right) {
+            s1.push(root.right)
+        }
+    }
+    while (s2.length!==0) {
+        var node = s2.pop();
+        console.log(node.val);
+    }
+    
+}
