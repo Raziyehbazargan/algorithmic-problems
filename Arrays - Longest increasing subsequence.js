@@ -39,19 +39,23 @@ function lis (arr) {
 		} else if (arr[i]>tails[length-1]) {
 			tails[length++] = arr[i];
 		} else {
-			tails[replaceIndex(tails, -1, length-1, arr[i])] = arr[i]
+			tails[binarySearch(tails, arr[i])+1] = arr[i]
 		}
 	}
-	return length;
+	return tails;
 }
-function replaceIndex(tails, l, r, key) {
-	while (r-l>1) {
-		var mid = Math.floor((l+r)/2)
-		if (tails[mid]>=key) {
-			r=mid;
-		} else {
-			l = mid;
-		}
-	}
-	return r;
+
+var binarySearch = function(arr, el) {
+    var start = 0;
+    var end = arr.length - 1;
+    
+    while(end > start + 1) {
+        var mid = Math.floor((end+start)/2);
+        if(arr[mid] >= el) {
+            end = mid;
+        }else {
+            start = mid;
+        }
+    }
+    return start;
 }
