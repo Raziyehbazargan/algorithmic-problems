@@ -1,7 +1,7 @@
 var findPeakElement = function(arr) {
     var max = arr[0];
     var index = 0;
-    for (i=1; i<=arr.length-2;i++) {
+    for (i=1; i<arr.length-1;i++) {
         var prev = arr[i-1];
         var next = arr[i+1];
         var cur = arr[i];
