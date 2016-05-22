@@ -1,0 +1,47 @@
+Types of tests:
+
+How would you test vending machine?
+
+
+functional testing
+
+check proper change 
+more than available items stuffed in the tray
+machine does not have change.?
+
+
+instability testing
+check if vending machine can be inztalled properly with proper connection
+check if it is movable.
+
+
+usability testing
+check if vending machine has proper buttons
+check if it has 0-9 numbers to select
+check if it has coin return 
+dispenser/provision for hands to fit in  to take the product
+buttons are not too rough
+
+
+performance
+
+how quickly it drops
+test on differnt plugs and power 110 v 220 v 440v 
+test on incremental loads of coins and keep selecting 
+keep inserting coins continously for 1 hr then select
+
+
+Stress
+
+shake the machine
+switch on/switch off machine alternatingly and select it.
+in severe cold/hot atmosphere does it work.
+keep inserting coins continously for 1 hr then select
+insert nothing and keep pressing
+
+compatibility
+
+ different coins/dollars
+ takes a 1 dollr 5 dollar 100 dollar etc....
+ can vending machine work properly outside 
+  
