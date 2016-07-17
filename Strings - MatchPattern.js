@@ -14,6 +14,7 @@ function checkOrder (str1, str2) {
 		}
 	}
 	return true;
+<<<<<<< HEAD
 }
 
 function isSubs (str1, str2) {
@@ -33,4 +34,6 @@ function isSubs (str1, str2) {
 		}
 	}
 	return false;
+=======
+>>>>>>> e453f8a2e102b72965dae3c3a4d133d31f27158c
 }

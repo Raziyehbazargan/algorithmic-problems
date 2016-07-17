@@ -30,6 +30,7 @@ var hasCycle = function(head) {
             return true;
         }
     }
+<<<<<<< HEAD
 };
 
 function RemoveNode(head, k) {
@@ -62,3 +63,6 @@ if (count==1 {
  return head;
 
 }
+=======
+};
+>>>>>>> e453f8a2e102b72965dae3c3a4d133d31f27158c

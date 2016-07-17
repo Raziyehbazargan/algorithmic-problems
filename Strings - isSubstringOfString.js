@@ -22,6 +22,7 @@ function isSubs (str1, str2) {
 
 
 
+<<<<<<< HEAD
 function check (str1, str2) {
     var j = 0;
 
@@ -36,3 +37,6 @@ function check (str1, str2) {
         return false;
     }
 }
+=======
+
+>>>>>>> e453f8a2e102b72965dae3c3a4d133d31f27158c

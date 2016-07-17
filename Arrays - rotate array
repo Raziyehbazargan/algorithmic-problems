@@ -13,7 +13,11 @@ var rotate = function(nums, k) {
         result[f] = nums[j];
         j++;
     }
+<<<<<<< HEAD
     return
+=======
+    nums = result.slice();
+>>>>>>> e453f8a2e102b72965dae3c3a4d133d31f27158c
 };
 
 //space - O(n), time  - O(n)
@@ -30,6 +34,7 @@ var rotate = function(nums, k) {
             nums[j-1] = cur;
         }
     }
+<<<<<<< HEAD
     return nums;
 };
 
@@ -46,3 +51,6 @@ function reverseArray (arr) {
     }
     return arr;
 }
+=======
+};
+>>>>>>> e453f8a2e102b72965dae3c3a4d133d31f27158c

@@ -1,4 +1,5 @@
 // solution if we want to reverse remainder in the end
+<<<<<<< HEAD
 function Node (val) {
     this.val = val;
     this.next = null;
@@ -7,6 +8,8 @@ var head = new Node(1);
 head.next = new Node(2);
 head.next.next = new Node(3);
 head.next.next.next = new Node(4);
+=======
+>>>>>>> e453f8a2e102b72965dae3c3a4d133d31f27158c
 var reverseKGroup = function(head, k) {
     var cur = head;
     var next = null;

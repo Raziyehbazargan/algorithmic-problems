@@ -30,12 +30,22 @@ var removeDuplicates = function(arr) {
      for (var i = 1; i<arr.length; i++ ) {
          if (arr[i]!==prev) {
              start+=1;
+<<<<<<< HEAD
              //arr[i], arr[start] = arr[start], arr[i];
+=======
+             arr[i], arr[start] = arr[start], arr[i];
+>>>>>>> e453f8a2e102b72965dae3c3a4d133d31f27158c
              arr[start] = arr[i];
              prev = arr[start];
          }
      }
+<<<<<<< HEAD
      return arr;
     
 };
 
+=======
+     return start+1;
+    
+};
+>>>>>>> e453f8a2e102b72965dae3c3a4d133d31f27158c
