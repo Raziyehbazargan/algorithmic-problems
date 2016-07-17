@@ -1,0 +1,87 @@
+var getIntersectionNode = function(headA, headB) {
+   var map = {};
+   var cur1 = headA;
+   while (cur1!==null) {
+       
+       map[cur1.val] = cur1;
+       cur1 = cur1.next
+   }
+   var cur2 = headB;
+   while (cur2!==null) {
+       if (cur2.val in map) {
+           return map[cur2];
+       }
+       cur2 = cur2.next;
+   }
+   return null;
+};
+
+var getIntersectionNode = function(headA, headB) {
+ if (headA===null||headB===null) {
+       return null;
+   }
+    var count = 0;
+    var cur1 = headA;
+    
+    while (cur1!==null) {
+        count++;
+        cur1=cur1.next;
+    }
+    cur1 = headA;
+    var cur2 = headB;
+    for (var i=0; i<count;i++) {
+         while (cur2!==null) {
+             if(cur1.val===cur2.val) {
+                 return cur1;
+             }
+             cur2 = cur2.next;
+         }
+         cur2 = headB;
+         cur1 = cur1.next;
+    }
+    return null;
+};
+
+var getIntersectionNode = function(headA, headB) {
+     if (headA===null||headB===null) {
+       return null;
+   }
+    var count1 = 0;
+    var count2 = 0;
+    var cur1 = headA;
+    var cur2 = headB;
+    
+    while (cur1!==null) {
+        count1++;
+        cur1=cur1.next;
+    }
+    while (cur2!==null) {
+        count2++;
+        cur2=cur2.next;
+    }
+    
+    var A = headA; var B = headB;
+    if (count1>=count2) {
+        return intersection(A, B, count1, count2);
+    }
+    if (count1<count2) {
+        return intersection(B, A, count2, count1);
+    }
+
+    function intersection (A, B, count1, count2){
+        if (count1!==count2) {
+            var diff = count1-count2;
+            for (var i=0; i<diff; i++) {
+                A = A.next;
+            }
+        }
+         while (B!==null||A!==null) {
+            if (A.val===B.val)  {
+                return A;
+            }
+            B = B.next;
+            A = A.next;
+        }
+        return null;
+    }
+};

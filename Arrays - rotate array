@@ -1,0 +1,48 @@
+var rotate = function(nums, k) {
+    if (k>nums.length) {
+        k = k%nums.length;
+    }
+    
+    var result = [];
+    
+    for (var i = 0; i<k; i++) {
+        result[i] = nums[nums.length-k+i];
+    }
+    var j = 0;
+    for (var f=k; f<nums.length; f++) {
+        result[f] = nums[j];
+        j++;
+    }
+    return
+};
+
+//space - O(n), time  - O(n)
+
+//2-nd solution; time = O(n*k)
+var rotate = function(nums, k) {
+    if (nums === null||k < 0) {
+        throw new Error();
+    }
+    for (var i = 0; i<k; i++) {
+        for (var j = nums.length-1; j>0; j--) {
+            var cur = nums[j];
+            nums[j] = nums[j-1];
+            nums[j-1] = cur;
+        }
+    }
+    return nums;
+};
+
+function reverseArray (arr) {
+   var length = arr.length;
+   var i = 0; var j = arr.length-1;
+    while (length>1) {
+        var temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+        i++;
+        j--;
+        length = length-2;
+    }
+    return arr;
+}

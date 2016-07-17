@@ -1,0 +1,53 @@
+var merge = function(arr) {
+ 
+   if (arr.length<2) {
+       return arr;
+   }
+   var result = [];
+   var min = arr[0][0];
+   var max = arr[0][1];
+   for (var i = 1; i<arr.length; i++) {
+       if (arr[i][0]>max) {
+           result.push([min, max]);
+           if (i===arr.length-1) {
+               result.push([arr[i][0], arr[i][1]])
+           } else {
+               min = arr[i][0];
+               max = arr[i][1];
+           }
+       } 
+       if (arr[i][0]>=min&&arr[i][0]<max) {
+           if (i===arr.length-1) {
+               result.push(min, arr[i][1])
+           } else{
+               max = arr[i][1];
+           }
+       }
+   }
+   return result;
+}; 
+
+//solution using stack
+var merge = function(arr) {
+  
+   if (arr.length<2) {
+       return arr;
+   }
+   var max = null;
+   arr = arr.sort();
+   var stack = [];
+   stack.push(arr[0]);
+   for (var i = 1; i<arr.length; i++) {
+       max = stack[stack.length-1];
+       if (max[1]<arr[i][0]) {
+           result.push(arr[i]);
+           
+       } else if (max[1]<arr[i][1]) {
+           max[1] = arr[i][1]
+           stack.pop();
+           stack.push(max);
+       }
+      
+   }
+   return stack;
+}; 
