@@ -30,14 +30,6 @@ function formatDuration (seconds) {
  }
  
  for (var k = 0; k<result.length; k++) {
-   if (result[k][1]!==1) {
-       result[k][0]=result[k][0]+"s";
-   }   
- }
- 
- if (result.length===0) {
-   return "now";
- }
  if (result.length===1) {
    output+=result[0][1] + " " + result[0][0];
  } else {
@@ -48,5 +40,13 @@ function formatDuration (seconds) {
    output+=" and " + result[result.length-1][1] + " " + result[result.length-1][0];
  }
   
+   if (result[k][1]!==1) {
+       result[k][0]=result[k][0]+"s";
+   }   
+ }
+ 
+ if (result.length===0) {
+   return "now";
+ }
  return output;
 }
